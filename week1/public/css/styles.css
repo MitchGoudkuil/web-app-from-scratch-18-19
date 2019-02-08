@@ -5,7 +5,7 @@
 html {
   background-color: #EE3E37;
   margin: 0;
-  font-family: 'ABeeZee', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -24,6 +24,11 @@ header {
   -webkit-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.16);
   -moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.16);
   box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.16);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 #screen {
@@ -75,12 +80,21 @@ li:hover {
  transform: scale(1.2);
 }
 
-small{
-  display: inline-block;
-  margin: 0;
-  margin-top: .4em;
-  padding: 5px;
-  border-radius:
+.topbar{
+  display: flex;
+  align-items: center;
+}
+
+.topbar > section {
+  width: 50%
+}
+
+.left {
+
+}
+
+.right {
+text-align: right;
 }
 
 .pokemon {
@@ -100,7 +114,10 @@ small{
   position: absolute;
   bottom: -1em;
   left: 50%;
-  margin-left: -60px
+  margin-left: -60px;
+  -webkit-box-shadow: 0px 50px 5px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.16);
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.16);
 }
 
 .button {

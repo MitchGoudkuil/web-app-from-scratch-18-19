@@ -1,56 +1,64 @@
-# Web App From Scratch @cmda-minor-web 18-19
+## Webapp from scratch readme
+By Mitch Goudkuil
 
-In dit vak gaan we een web app maken zonder frameworks of onnodige libraries, dus zoveel mogelijk met native HTML, CSS & JavaScript. Het eindproduct is een modulair opgezet prototype voor een single page web app. Data wordt opgehaald uit een externe API, waar nodig gemanipuleerd en vervolgens getoond in de Web App. Je leert hoe je structuur aanbrengt in je code en hoe je hiermee 'from scratch' een (prototype voor een) web app maakt. Met deze kennis begrijp je daarnaast beter hoe bestaande api’s, libraries en frameworks werken.
+#### Link to the application
+[PokeSearch](https://mitchgoudkuil.github.io/web-app-from-scratch-18-19/)
 
-## Leerdoelen
-- _Je kan structuur aanbrengen in je code door patterns toe te passen. Je kan de keuze voor de gekozen patterns beargumenteren_
-- _Je kan data ophalen, manipuleren en dynamisch omzetten naar html elementen mbv templating._
-- _Je begrijpt hoe je middels asynchrone code met een externe API kan werken._
-- _Je begrijpt hoe je states in je applicaties kan managen en stelt de gebruiker op de hoogte van states waar nodig._
+#### The assignment
+The assignment that we had to do is exactly as the title says, build a webapp from scratch. I used the PokeApi because Pokemon was a big part of my childhood and I thought it would be really cool to make something with the data. After doing some reading I found out that the Api contains a lot of fun data to play with and to make features out of.
 
-[Rubric](https://docs.google.com/spreadsheets/d/e/2PACX-1vTjZGWGPC_RMvTMry8YW5XOM79GEIdgS7I5JlOe6OeeOUdmv7ok1s9jQhzojNE4AsyzgL-jJCbRj1LN/pubhtml?gid=0&single=true)
+#### The concept
+The concept that I want to make is not just a place where you can find certain Pokemon but also make it able to add and remove pokemon to your own team, and see the stats of the pokemon together. Every pokemon gets it's own detail page where the data is shown and where the user can take a closer look into the stats.
 
-## Lesprogramma
-
-### Week 1 - Hello API 🐒
-
-Doel: Data ophalen uit een API en renderen in een overzichtspagina.
-
-[Opdrachten](https://drive.google.com/open?id=1OVhWQNaCgSluYviTKKWcApkyPd23xow1PiExb8GYANM)
-
-[Slides](https://drive.google.com/open?id=1Rjl9xqXoKniQSRJPdkU1O5YwWC33SJK8KiV0a-H_xZU)
-
-### Week 2 - Design and Refactor 🛠
-
-Doel: Breakdown maken van de web app. Routes en states toevoegen. Detailpagina renderen.
-
-[Opdrachten](https://drive.google.com/open?id=1GMDTdW3LycAYpZSFI6gk_lrKrx8-zLWrNh69aaVEH5Y)
-
-[Slides](https://drive.google.com/open?id=1IqQeu1m0dQiSC_KCvrn8eencAgtYe7X6qT-gm0n9Bmc)
-
-### Week 3 - Wrapping up 🎁
-
-Doel: Data manipuleren. Code splitsen in modules. Reflecteren op eindresultaat.
-
-[Opdrachten](https://drive.google.com/open?id=13pKQu72pshaEzKw9q5JHLa-aop85nMP6nDCdqioWjoQ)
-
-[Slides](https://drive.google.com/open?id=1BSzGYNLMgtHD4HRnK7f0DgyTv4Pg3xsQwD_eYNo7v0Y)
+#### Sketches and fast design
+I made a small and fast design of how the application was going to look so I could start fetching the data. I wanted it to look like a pokedex which was a small computer the main character has to identify pokemon. I eventually did not really look at the design I made because I was playing around with styling. I am still going to sketch down more of the features that I want to put into the application, which i'm going to put here.
 
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+#### Fetching the awesome data
+Started of by building the list item where all the pokemon were going to get stored en making the variables to use.
 
-<!-- ☝️ replace this description with a description of your own work -->
+With a promise I made a connection to the API fetched the data.
 
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
+```javascript
+fetch('https://pokeapi.co/api/v2/pokemon?offset=' + searchAmount)
+.then(res => {
+  return res.json()
+})
+.then(json => {
+  return json.results.map(results => {
+    return results.url
+  })
+})
+```
 
-<!-- Maybe a table of contents here? 📚 -->
+I found out that the data that you get from the Api is only the name and the link to more data. Because of this I had to gather all those links and do a promise.all with a new fetch to get the specific data for each pokemon.
 
-<!-- How about a section that describes how to install this project? 🤓 -->
+This way I was able to show the images, and the different types of pokemon.
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+```javascript
+.then(allUrls => {
+  return Promise.all(allUrls.map(url => {
+    let promise = new Promise((resolve, reject) => {
+      fetch(url).then(pokemon => {
+        resolve(pokemon.json())
+      })
+    })
+    return promise
+  }))
+})
+```
 
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
+Its new for me to work this way with promises, but it is way more handy because now I can use the data accordingly after it is loaded into the page. Before, it showed the first pokemon that was loaded in and that caused a unordered list.
 
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
+#### Features list
 
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+- [ ] Search and filter options to find certain pokemon.
+- [ ] Possibility to add pokemon to your team and look at the data combined together.
+- [ ] Possibility to change all the pokem on their sprites to the shiny type of pokemon.
+- [ ] Add routing for every pokemon to go to their specific detail page.
+- [ ] Send all the specific pokemon data to the detail page and be able to use it there.
+- [X] fetch the data of every specific pokemon.
+- [X] Load more pokemon on click load more button.
+
+#### Self learning
+Learn way more about promises, because they are freaking handy and understandable :+1: :fire:
