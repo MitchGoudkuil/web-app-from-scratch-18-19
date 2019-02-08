@@ -2,7 +2,7 @@
 By Mitch Goudkuil
 
 #### Link to the application
-[PokeSearch](https://mitchgoudkuil.github.io/web-app-from-scratch-18-19/)
+[PokeSearch](https://mitchgoudkuil.github.io/web-app-from-scratch-18-19/week1)
 
 #### The assignment
 The assignment that we had to do is exactly as the title says, build a webapp from scratch. I used the PokeApi because Pokemon was a big part of my childhood and I thought it would be really cool to make something with the data. After doing some reading I found out that the Api contains a lot of fun data to play with and to make features out of.
