@@ -55,11 +55,11 @@ function getPokemon() {
           </li>
 
         `
-        list.innerHTML += pokeMarkUp
+        list.insertAdjacentHTML('beforeend',  pokeMarkUp)
       })
   })
   .catch(err => {
-    console.error()
+    console.error(err)
   })
 }
 
