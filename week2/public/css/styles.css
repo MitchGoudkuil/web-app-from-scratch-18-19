@@ -33,7 +33,9 @@ header section {
 }
 
 .filters {
-  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 a {
@@ -70,7 +72,7 @@ ul {
 
 
 li {
-  flex: 1 0 17%;
+  flex: 1 0 18%;
   list-style-type: none;
   text-transform: capitalize;
   text-align: center;
@@ -143,6 +145,40 @@ text-align: right;
 
 .button--green {
   background-color: #77A946;
+}
+
+.filter-item {
+  margin-right: 1em;
+  cursor: pointer;
+  transition: .4s;
+  width: 35px;
+}
+
+.filter-item:hover {
+  transform: scale(1.2);
+}
+
+.team-container {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  max-width: 30vw;
+  margin-right: -30vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #efefef;
+  -webkit-box-shadow: -8px 0px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: -8px 0px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: -8px 0px 5px 0px rgba(0,0,0,0.5);
+  transition: .3s;
+}
+
+.show {
+  transform: translateX(-30vw);
 }
 
 /* Pokemon type Colors */
