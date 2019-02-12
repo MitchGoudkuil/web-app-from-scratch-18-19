@@ -28,7 +28,6 @@ function apiCall(addNumber = 0) {
       return cleanIt(res)
     })
     .then(res => {
-      console.log(res);
       return res
     })
 }

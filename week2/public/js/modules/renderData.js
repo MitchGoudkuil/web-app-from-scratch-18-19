@@ -9,6 +9,7 @@ export function renderData(res) {
     let pokeMarkUp = `
 
       <li class="single-pokemon">
+        <img class="add-button" src="../../img/plusicon.svg">
         <a href="#">
         <img class="pokemon" src="${ pokemon.pokeImg }" alt="" data-second-image=${ pokemon.pokeShiny}>
           <p>#${pokemon.pokemonId} ${pokemon.pokeName} </p>

@@ -64,32 +64,70 @@ main > h3 {
   color: #fff;
 }
 
-ul {
+#poke-list {
   display: flex;
   flex-wrap: wrap;
   padding: 4em;
 }
 
 
-li {
+#poke-list li {
   flex: 1 0 18%;
   list-style-type: none;
   text-transform: capitalize;
   text-align: center;
+  position: relative;
+  overflow: hidden;
   margin-right: 1em;
   margin-bottom: 1em;
   border-radius: 1em;
   padding: 2em 0em;
   transition: 0.4s;
-  color: #fff
+  color: #101010;
+  background-color: #efefef;
 }
 
-li > p {
+#poke-list li > p {
   margin-top: 0;
 }
 
-li:hover {
- transform: scale(1.2);
+
+#poke-list li:hover {
+ transform: scale(1.06);
+}
+
+#poke-list li:hover > .add-button{
+ opacity: 1;
+}
+
+.add-button {
+  width: 40px;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  opacity: 0;
+  transition: .4s;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.add-button:hover {
+  transform: scale(1.06);
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+}
+
+#team-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#team-list li {
+  flex: 1 0 50%
+
 }
 
 .topbar{
@@ -99,14 +137,6 @@ li:hover {
 
 .topbar > section {
   width: 50%
-}
-
-.left {
-
-}
-
-.right {
-text-align: right;
 }
 
 .pokemon {
@@ -119,7 +149,8 @@ text-align: right;
 
 .type-tag {
   padding: 5px 15px;
-  border-radius: 5px
+  border-radius: 5px;
+  color: #fff
 }
 
 .loadmore {

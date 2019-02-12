@@ -1,6 +1,7 @@
 import { apiCall } from './modules/apicall.js';
 import { renderData } from './modules/renderData.js';
 import { switchImage } from './modules/switchImage.js';
+import { addToTeam } from './modules/addToTeam.js';
 
 // All button variables
 let loadMoreButton = document.querySelector('.loadmore');
@@ -13,8 +14,14 @@ let searchAmount = 0;
 
 apiCall().then(res => {
   renderData(res)
+}).then(res => {
+  let addToTeamButton = document.querySelectorAll('.single-pokemon');
+  addToTeamButton.forEach(item => {
+    item.addEventListener('click', function(){
+      addToTeam(item)
+    })
+  })
 })
-
 // toggle for team container
 teamButton.addEventListener("click", function(){
   teamContainer.classList.toggle('show')
@@ -31,3 +38,10 @@ loadMoreButton.addEventListener('click', function(){
 shinyButton.addEventListener('click', function(){
 switchImage()
 })
+
+// addToTeamButton.forEach(item => {
+//   item.addEventListener('click', function(){
+//     // addToTeam()
+//     console.log("hey")
+//   })
+// })
