@@ -1,7 +1,7 @@
-import { apiCall } from './modules/apicall.js';
-import { renderData } from './modules/renderData.js';
-import { switchImage } from './modules/switchImage.js';
+import { getAllData, getSingleData } from './modules/getData.js';
+import { switchImage, switchBack } from './modules/switchImage.js';
 import { addToTeam } from './modules/addToTeam.js';
+import './route.js';
 
 // All button variables
 let loadMoreButton = document.querySelector('.loadmore');
@@ -10,18 +10,30 @@ let teamButton = document.querySelector('.team-button');
 
 let teamContainer = document.querySelector('.team-container');
 
-let searchAmount = 0;
-
-apiCall().then(res => {
-  renderData(res)
-}).then(res => {
-  let addToTeamButton = document.querySelectorAll('.single-pokemon');
-  addToTeamButton.forEach(item => {
-    item.addEventListener('click', function(){
-      addToTeam(item)
-    })
-  })
+routie({
+  '': function(){
+    getAllData()
+  },
+  ':name': function(name) {
+    getSingleData(name);
+  }
 })
+
+
+
+
+
+// .then(res => {
+//   let addToTeamButton = document.querySelectorAll('.single-pokemon');
+//   addToTeamButton.forEach(item => {
+//     item.addEventListener('click', function(){
+//       addToTeam(item)
+//     })
+//   })
+// })
+
+
+
 // toggle for team container
 teamButton.addEventListener("click", function(){
   teamContainer.classList.toggle('show')
@@ -29,7 +41,7 @@ teamButton.addEventListener("click", function(){
 
 // Loads 20 more pokemon to the viewport
 loadMoreButton.addEventListener('click', function(){
-  apiCall(20).then(res => {
+  getAllData(20).then(res => {
     renderData(res)
   })
 })
@@ -38,6 +50,8 @@ loadMoreButton.addEventListener('click', function(){
 shinyButton.addEventListener('click', function(){
 switchImage()
 })
+
+
 
 // addToTeamButton.forEach(item => {
 //   item.addEventListener('click', function(){

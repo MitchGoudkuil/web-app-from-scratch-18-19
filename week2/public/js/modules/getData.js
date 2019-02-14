@@ -1,8 +1,9 @@
-import { cleanIt } from './cleanData.js';
+import { cleanIt } from './cleanData.js'
+import { renderAllData, renderSingleData } from './renderData.js'
 
-  let startNumber = 0;
+let startNumber = 0;
 
-function apiCall(addNumber = 0) {
+export function getAllData(addNumber = 0) {
   let number = startNumber += addNumber
 
     return fetch('https://pokeapi.co/api/v2/pokemon?offset=' + number)
@@ -25,11 +26,24 @@ function apiCall(addNumber = 0) {
       }))
     })
     .then(res => {
-      return cleanIt(res)
+      return res.map(pokemon => {
+        return cleanIt(pokemon)
+      })
     })
     .then(res => {
-      return res
+      renderAllData(res)
     })
 }
 
-export { apiCall }
+export function getSingleData(name) {
+  return fetch('https://pokeapi.co/api/v2/pokemon/' + name)
+  .then(res => {
+    return res.json()
+  })
+  .then(json => {
+      return cleanIt(json);
+  })
+  .then(res => {
+    renderSingleData(res);
+  })
+}

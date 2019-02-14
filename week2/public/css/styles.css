@@ -48,6 +48,90 @@ a {
   background-color: #1E1E1E;
   border-radius: 1em;
   text-align: center;
+  padding: 4em;
+}
+
+.single-pokemon-container {
+  background-color: #fff;
+  border-radius: 1em;
+  display: flex;
+  overflow: hidden;
+
+}
+
+.single-pokemon-image {
+  position: relative;
+  height: 100%;
+  background-image: url(../../img/pokebackground.png);
+  background-size: contain;
+  padding: 5em;
+  flex: 1;
+
+}
+
+.single-pokemon-info-big {
+  margin-left: 1em;
+}
+
+.pokemon-single-img{
+  position: relative;
+  z-index: 2;
+  image-rendering: pixelated;
+  max-width: 140px;
+  width: 100%;
+  margin-bottom: -20%
+
+}
+
+.single-pokemon-info {
+  padding: 1em 2em;
+  text-align: left;
+  flex: 3;
+  display: flex;
+  position: relative;
+}
+
+.single-pokemon-info-big {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em;
+}
+
+.single-pokemon-info-big > div {
+  flex: 1 0 33.3%;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  background-color: #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+}
+
+.statname {
+  margin-right: .5em;
+}
+
+.name {
+  text-transform: capitalize;
+}
+
+.shadow {
+  image-rendering: pixelated;
+  width: 200px;
+  position: relative;
+}
+
+.turnbutton {
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  width: 30px;
+  cursor: pointer;
+}
+
+.statnumber {
+  display: block;
 }
 
 #logo {
@@ -67,7 +151,6 @@ main > h3 {
 #poke-list {
   display: flex;
   flex-wrap: wrap;
-  padding: 4em;
 }
 
 
