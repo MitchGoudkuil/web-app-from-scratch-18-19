@@ -9,11 +9,11 @@ By Mitch Goudkuil
 #### Table of contents
 
 * [The assignment](#The-assignment)
-* [The concept](#The-concept)
+   * [The concept](#The-concept)
 * [Sketches and fast design](#Sketches-and-fast-design)
 * [Fetching the data](#Fetching-the-data)
 * [Features list](#Features-list)
-* [Self Learning](#Self-Learning)
+   * [Self Learning](#Self-Learning)
 
 #### The assignment
 The assignment that we had to do is exactly as the title says, build a webapp from scratch. I used the PokeApi because Pokemon was a big part of my childhood and I thought it would be really fun to make something with the data. After doing some reading I found out that the Api contains a lot of fun data to play with and to make features out of.
@@ -21,8 +21,12 @@ The assignment that we had to do is exactly as the title says, build a webapp fr
 #### The concept
 The concept that I want to make is not just a place where you can find certain Pokemon but also make it able to add and remove pokemon to your own team, and see the stats of the pokemon together. Every pokemon gets it's own detail page where the data is shown and where the user can take a closer look into the stats.
 
+---
+
 #### Sketches and fast design
 I made a small and fast design of how the application was going to look so I could start fetching the data. I wanted it to look like a pokedex which was a small computer the main character has to identify pokemon. I eventually did not really look at the design I made because I was playing around with styling. I am still going to sketch down more of the features that I want to put into the application, which i'm going to put here.
+
+---
 
 
 #### Fetching the awesome data
@@ -60,6 +64,8 @@ This way I was able to show the images, and the different types of pokemon.
 ```
 
 Its new for me to work this way with promises, but it is way more handy because now I can use the data accordingly after it is loaded into the page. Before, it showed the first pokemon that was loaded in and that caused a unordered list.
+
+---
 
 #### Features list
 
