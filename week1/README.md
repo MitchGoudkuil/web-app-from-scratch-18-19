@@ -2,7 +2,10 @@
 By Mitch Goudkuil
 
 #### Link to the application
-[PokeSearch](https://mitchgoudkuil.github.io/web-app-from-scratch-18-19/week1)
+[PokeSearch](https://mitchgoudkuil.github.io/web-app-from-scratch-18-19/week2)
+
+#### Table of contents
+
 
 #### The assignment
 The assignment that we had to do is exactly as the title says, build a webapp from scratch. I used the PokeApi because Pokemon was a big part of my childhood and I thought it would be really cool to make something with the data. After doing some reading I found out that the Api contains a lot of fun data to play with and to make features out of.
@@ -54,9 +57,9 @@ Its new for me to work this way with promises, but it is way more handy because 
 
 - [ ] Search and filter options to find certain pokemon.
 - [ ] Possibility to add pokemon to your team and look at the data combined together.
-- [ ] Possibility to change all the pokem on their sprites to the shiny type of pokemon.
-- [ ] Add routing for every pokemon to go to their specific detail page.
-- [ ] Send all the specific pokemon data to the detail page and be able to use it there.
+- [X] Possibility to change all the pokem on their sprites to the shiny type of pokemon.
+- [X] Add routing for every pokemon to go to their specific detail page.
+- [X] Send all the specific pokemon data to the detail page and be able to use it there.
 - [X] fetch the data of every specific pokemon.
 - [X] Load more pokemon on click load more button.
 
