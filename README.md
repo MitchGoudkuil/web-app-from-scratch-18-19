@@ -4,11 +4,19 @@ By Mitch Goudkuil
 #### Link to the application
 [PokeSearch](https://mitchgoudkuil.github.io/web-app-from-scratch-18-19/week2)
 
+![Image from the interface](http://mitchgoudkuil.nl/img/app.png)
+
 #### Table of contents
 
+* [The assignment](#the assignment)
+* [The concept](#the concept)
+* [Sketches and fast design](#sketches and fast design)
+* [Fetching the data](#fetching the data)
+* [Features list](#features list)
+* [Self Learning](#self Learning)
 
 #### The assignment
-The assignment that we had to do is exactly as the title says, build a webapp from scratch. I used the PokeApi because Pokemon was a big part of my childhood and I thought it would be really cool to make something with the data. After doing some reading I found out that the Api contains a lot of fun data to play with and to make features out of.
+The assignment that we had to do is exactly as the title says, build a webapp from scratch. I used the PokeApi because Pokemon was a big part of my childhood and I thought it would be really fun to make something with the data. After doing some reading I found out that the Api contains a lot of fun data to play with and to make features out of.
 
 #### The concept
 The concept that I want to make is not just a place where you can find certain Pokemon but also make it able to add and remove pokemon to your own team, and see the stats of the pokemon together. Every pokemon gets it's own detail page where the data is shown and where the user can take a closer look into the stats.
