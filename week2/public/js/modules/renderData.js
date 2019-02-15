@@ -32,8 +32,8 @@ export function renderSingleData(json){
     <div class="single-pokemon-container">
       <div class="single-pokemon-image">
         <img class="pokemon-single-img" src="${json.pokeImg}" data-back-image=${ json.pokeImgBack}>
-        <img class="shadow" src="../../img/grass.png" >
-        <img class="turnbutton" src="../../img/turn.svg">
+        <img class="shadow" src="./img/grass.png" >
+        <img class="turnbutton" src="./img/turn.svg">
       </div>
       <div class="single-pokemon-info">
         <div class="single-pokemon-info-small">
