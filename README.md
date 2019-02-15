@@ -8,12 +8,12 @@ By Mitch Goudkuil
 
 #### Table of contents
 
-* [The assignment](#the assignment)
-* [The concept](#the concept)
-* [Sketches and fast design](#sketches and fast design)
-* [Fetching the data](#fetching the data)
-* [Features list](#features list)
-* [Self Learning](#self Learning)
+* [The assignment](#The-assignment)
+* [The concept](#The-concept)
+* [Sketches and fast design](#Sketches-and-fast-design)
+* [Fetching the data](#Fetching-the-data)
+* [Features list](#Features-list)
+* [Self Learning](#Self-Learning)
 
 #### The assignment
 The assignment that we had to do is exactly as the title says, build a webapp from scratch. I used the PokeApi because Pokemon was a big part of my childhood and I thought it would be really fun to make something with the data. After doing some reading I found out that the Api contains a lot of fun data to play with and to make features out of.
