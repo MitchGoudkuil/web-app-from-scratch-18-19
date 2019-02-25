@@ -1,7 +1,4 @@
 export function cleanIt(pokemon) {
-  pokemon.stats.map(stat => {
-    console.log(stat.stat.name);
-  })
       return  {
         pokeName: pokemon.name,
         pokeImg: pokemon.sprites.front_default,

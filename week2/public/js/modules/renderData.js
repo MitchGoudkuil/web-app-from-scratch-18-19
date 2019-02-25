@@ -1,9 +1,14 @@
 import { switchBack } from './switchImage.js';
+import { addToTeam } from './addToTeam.js'
+import { getTeamMemberData } from './getData.js'
+import { addListeners } from './addListeners.js'
 
 let screenItem = document.querySelector('#screen');
+let teamList = document.querySelector('#team-list');
 
 export function renderAllData(res) {
   let list = document.querySelector('#poke-list')
+
 
 
   res.forEach(pokemon => {
@@ -12,17 +17,19 @@ export function renderAllData(res) {
     let pokeMarkUp = `
 
       <li class="single-pokemon">
-        <img class="add-button" src="../../img/plusicon.svg">
+        <img id="${pokemon.pokeName}" class="add-button" src="./img/plusicon.svg">
         <a href="#${pokemon.pokeName}">
         <img class="pokemon" src="${ pokemon.pokeImg }" alt="" data-second-image=${ pokemon.pokeShiny}>
           <p class="name">#${pokemon.pokemonId} ${pokemon.pokeName} </p>
         </a>
           ${pokemon.pokeTypes}
       </li>
-
     `
     list.insertAdjacentHTML('beforeend',  pokeMarkUp)
+
+
   })
+addListeners();
 }
 
 export function renderSingleData(json){
@@ -56,5 +63,28 @@ export function renderSingleData(json){
     switchBack()
     })
 
+
+}
+
+export function renderTeamData(res) {
+
+  let storedTeam = JSON.parse(localStorage.getItem("team"));
+  let teamContainer = document.querySelector('.team-container');
+  let test = storedTeam.map(pokemon => {
+    return `
+    <div class="team-item">
+    <img src="${pokemon.pokeImg}">
+    <h5 class="name">#${pokemon.pokemonId} ${pokemon.pokeName} </h5>
+    </div>
+    `
+  })
+
+  if (teamContainer.classList.contains('show')) {
+
+  } else {
+      teamContainer.classList.toggle('show')
+  }
+
+    teamList.innerHTML = test.join('')
 
 }

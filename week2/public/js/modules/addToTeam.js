@@ -1,20 +1,11 @@
-import { renderTeam } from './renderTeam.js'
+import { renderTeamData } from './renderData.js'
+let teamList = document.querySelector('#team-list');
 let teamArray = []
 
-function addToTeam(item){
-  console.log("hi");
+function addToTeam(pokemon){
+  teamArray.push(pokemon)
 
-
-  // console.log(item);
-  // let itemObject = {
-  //   pokemon: item
-  // }
-  //
-  // let jsonReady = JSON.stringify(itemObject)
-  // console.log(jsonReady);
-  // teamArray.push(jsonReady)
-  // localStorage.setItem('team', teamArray);
-  // // renderTeam()
+  renderTeamData(teamArray)
 }
 
 export { addToTeam }

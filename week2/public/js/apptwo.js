@@ -8,7 +8,7 @@ let loadMoreButton = document.querySelector('.loadmore');
 let shinyButton = document.querySelector('.shiny-button');
 let teamButton = document.querySelector('.team-button');
 
-let teamContainer = document.querySelector('.team-container');
+
 
 routie({
   '': function(){
@@ -20,30 +20,18 @@ routie({
 })
 
 
-
-
-
-// .then(res => {
-//   let addToTeamButton = document.querySelectorAll('.single-pokemon');
-//   addToTeamButton.forEach(item => {
-//     item.addEventListener('click', function(){
-//       addToTeam(item)
-//     })
-//   })
-// })
-
+function openTeam() {
+  let teamContainer = document.querySelector('.team-container');
+  teamContainer.classList.toggle('show')
+}
 
 
 // toggle for team container
-teamButton.addEventListener("click", function(){
-  teamContainer.classList.toggle('show')
-})
+teamButton.addEventListener("click", openTeam)
 
 // Loads 20 more pokemon to the viewport
 loadMoreButton.addEventListener('click', function(){
-  getAllData(20).then(res => {
-    renderData(res)
-  })
+  getAllData(20)
 })
 
 // switch function that changes images to shine one's
