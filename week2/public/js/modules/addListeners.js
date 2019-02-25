@@ -5,13 +5,14 @@ export function addListeners(){
   let addToTeamButton = document.querySelectorAll('.single-pokemon');
   addToTeamButton.forEach(item => {
 
-    function listeners(e) {
-      getTeamMemberData(e.target.id)
+    if (item.classList.contains("added")){
+      console.log("alreade listener added")
+    } else {
+      item.classList.add("added");
+      function listeners(e) {
+        getTeamMemberData(e.target.id)
+      }
+      item.addEventListener('click', listeners )
     }
-
-    item.removeEventListener('click', listeners , true)
-    item.addEventListener('click', listeners , true)
-    console.log(item);
-
   })
 }

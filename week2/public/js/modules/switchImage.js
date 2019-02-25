@@ -1,6 +1,9 @@
 export function switchImage() {
   let allPokemon = document.querySelectorAll('.single-pokemon img')
   allPokemon.forEach(pokemon => {
+    if (pokemon.classList.contains('add-button')) {
+      return
+    }
     let tempImage = pokemon.getAttribute('src')
     pokemon.src = pokemon.dataset.secondImage
     pokemon.dataset.secondImage = tempImage
