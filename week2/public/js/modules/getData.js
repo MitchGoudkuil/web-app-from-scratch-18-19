@@ -8,7 +8,7 @@ export function getAllData(addNumber = 0) {
   let number = startNumber += addNumber;
 
 
-    return fetch('https://pokeapi.co/api/v2/pokemon?limit=200?offset=' + number)
+    return fetch('https://pokeapi.co/api/v2/pokemon?offset=' + number)
     .then(res => {
       return res.json()
     })
@@ -32,9 +32,6 @@ export function getAllData(addNumber = 0) {
         return cleanIt(pokemon)
       })
     })
-    // .then(res => {
-    //   renderAllData(res)
-    // })
 }
 
 export function getSingleData(name) {

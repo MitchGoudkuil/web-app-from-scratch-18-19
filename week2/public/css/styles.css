@@ -6,6 +6,7 @@ html {
   background-color: #EE3E37;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
+
 }
 
 @font-face {
@@ -22,6 +23,7 @@ html {
 
 body {
   margin: 0;
+    cursor: url(../../img/cursor.svg) 4 7, auto;
 }
 
 header {
@@ -38,6 +40,7 @@ header {
   -webkit-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.16);
   -moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.16);
   box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.16);
+
 }
 
 header section {
@@ -53,6 +56,7 @@ header section {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: url(../../img/cursor.svg) 4 7, pointer;
 }
 
 #screen {
@@ -176,7 +180,7 @@ a {
   right: 1em;
   bottom: 1em;
   width: 30px;
-  cursor: pointer;
+  cursor: url(../../img/cursor.svg) 4 7, pointer;
 }
 
 .statnumber {
@@ -227,6 +231,7 @@ main > h3 {
 
 #poke-list li:hover {
  transform: scale(1.06);
+ cursor: url(../../img/cursor.svg) 4 7, pointer;
 }
 
 #poke-list li:hover > .add-button{
@@ -240,7 +245,7 @@ main > h3 {
   top: 1em;
   opacity: 0;
   transition: .4s;
-  cursor: pointer;
+  cursor: url(../../img/cursor.svg) 4 7, pointer;
   border-radius: 100%;
 }
 
@@ -306,7 +311,7 @@ main > h3 {
 .button {
   padding: 10px 20px;
   margin-bottom: 1em;
-  cursor: pointer;
+  cursor: url(../../img/cursor.svg) 4 7, pointer;
   display: inline-block;
   transition: .2s
 }
@@ -333,7 +338,7 @@ main > h3 {
 
 .filter-item {
   margin-right: 1em;
-  cursor: pointer;
+  cursor: url(../../img/cursor.svg) 4 7, pointer;
   transition: .4s;
   width: 35px;
 }
