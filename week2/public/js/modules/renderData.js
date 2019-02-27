@@ -70,7 +70,7 @@ export function renderTeamData(res) {
 
   let storedTeam = JSON.parse(localStorage.getItem("team"));
   let teamContainer = document.querySelector('.team-container');
-  let test = storedTeam.map(pokemon => {
+  let storedPokemon = storedTeam.map(pokemon => {
     return `
     <div class="team-item">
     <img src="${pokemon.pokeImg}">
@@ -85,6 +85,6 @@ export function renderTeamData(res) {
       teamContainer.classList.toggle('show')
   }
 
-    teamList.innerHTML = test.join('')
+    teamList.innerHTML = storedPokemon.join('')
 
 }

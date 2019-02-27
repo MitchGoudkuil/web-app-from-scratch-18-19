@@ -59,7 +59,6 @@ a {
   position: relative;
   background-color: #1E1E1E;
   border: 5px solid #0D0D0D;
-  /* border-top: 5px solid #353535; */
   border-radius: 1em;
   text-align: center;
   padding: 4em;
@@ -72,6 +71,41 @@ a {
   overflow: hidden;
 
 }
+
+.eye-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo-section {
+  text-align: center;
+}
+
+.eye-item {
+  width: 50px;
+  margin-right: 5px;
+}
+
+.mini {
+  border-radius: 100%;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #4d1717;
+  background-color: #EBA844;
+  margin-right: 5px;
+}
+
+.mini: {
+  background-color: #BC261A;
+
+}
+
+.mini:last-of-type {
+  background-color: #81A654;
+
+}
+
+
 
 .single-pokemon-image {
   position: relative;
@@ -350,7 +384,6 @@ main > h3 {
 
 /* Pokemon type Colors */
 
-
 .water { background-color: #6390F0; }
 .electric { background-color: #F7D02C; }
 .grass { background-color: #7AC74C; }
@@ -369,3 +402,58 @@ main > h3 {
 .fairy { background-color: #D685AD; }
 .normal { background-color: #A8A77A; }
 .fire { background-color: #EE8130; }
+
+.red {fill:#bc281b;}
+.orange {fill:#eba844;}
+.green {fill:#82a753;}
+
+.blue-eye{fill:#7bc4ee;}
+
+.loading-red {
+  animation: redchange .2s linear infinite;
+}
+
+.loading-orange {
+  animation: orangechange .6s linear infinite;
+}
+
+.loading-green {
+  animation: greenchange .4s linear infinite;
+}
+
+.ping {
+  animation: bluePing .7s linear;
+}
+
+@keyframes redchange {
+  0% {
+    fill: #ff0c00;
+  }
+  100% {
+    fill: #991a14;
+  }
+}
+
+@keyframes bluePing {
+  0% {
+    fill: #0068ff;
+  }
+}
+
+@keyframes orangechange {
+  0% {
+    fill: #f9ff0d;
+  }
+  100% {
+    fill: #c4ab3f;
+  }
+}
+
+@keyframes greenchange {
+  0% {
+    fill: #abf915;
+  }
+  100% {
+    fill: #7ca81b;
+  }
+}
