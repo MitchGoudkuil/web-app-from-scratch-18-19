@@ -4,7 +4,6 @@ export function addListeners(){
   let teamList = document.querySelector('#team-list');
   let addToTeamButton = document.querySelectorAll('.single-pokemon');
   addToTeamButton.forEach(item => {
-
     if (item.classList.contains("added")){
       console.log("alreade listener added")
     } else {

@@ -1,30 +1,34 @@
-## Webapp from scratch readme
+# Pokesearch readme
 By Mitch Goudkuil
-
-#### Link to the application
-[PokeSearch](https://mitchgoudkuil.github.io/web-app-from-scratch-18-19/week2)
 
 ![Image from the interface](http://mitchgoudkuil.nl/img/app.png)
 
-#### Table of contents
+A website with pokemon data that looks the same as the pokedex the main character has in Pokemon. You can look for your favorite pokemon, add them to your team and review the stats.  Every pokemon gets it's own detail page where specific data is shown and where the user can take a closer look into the stats.
 
+### Table of contents
+
+* [Live Demo](#The-assignment)
 * [The assignment](#The-assignment)
    * [The concept](#The-concept)
-* [Sketches and fast design](#Sketches-and-fast-design)
-* [Fetching the data](#Fetching-the-data)
+* [Fetching the data](#Fetching-awesome-data)
 * [Features list](#Features-list)
    * [Self Learning](#Self-Learning)
 
-#### The assignment
-The assignment that we had to do is exactly as the title says, build a webapp from scratch. I used the PokeApi because Pokemon was a big part of my childhood and I thought it would be really fun to make something with the data. After doing some reading I found out that the Api contains a lot of fun data to play with and to make features out of.
+### Live Demo
+[PokeSearch](https://mitchgoudkuil.github.io/web-app-from-scratch-18-19/week2)
 
-#### The concept
-The concept that I want to make is not just a place where you can find certain Pokemon but also make it able to add and remove pokemon to your own team, and see the stats of the pokemon together. Every pokemon gets it's own detail page where the data is shown and where the user can take a closer look into the stats.
+### The assignment
+The assignment that we had to do is exactly as the title says, build a webapp from scratch. I used the PokeApi because Pokemon was a big part of my childhood and I thought it would be really fun to make something with the data. After doing some reading I found out that the Api contains a lot of fun data to play with and to make features out of.
 
 ---
 
+### Actor diagram
+![Image from the interface](http://mitchgoudkuil.nl/img/image1.png)
 
-#### Fetching the awesome data
+###  diagram
+![Image from the interface](http://mitchgoudkuil.nl/img/interaction-diagram.png)
+
+#### Fetching awesome data
 Started of by building the list item where all the pokemon were going to get stored en making the variables to use.
 
 With a promise I made a connection to the API fetched the data.
@@ -62,7 +66,7 @@ Its new for me to work this way with promises, but it is way more handy because 
 
 ---
 
-#### Features list
+### Features list
 
 - [ ] Search and filter options to find certain pokemon.
 - [X] Possibility to add pokemon to your team and look at the data combined together.
@@ -71,7 +75,7 @@ Its new for me to work this way with promises, but it is way more handy because 
 - [X] Send all the specific pokemon data to the detail page and be able to use it there.
 - [X] fetch the data of every specific pokemon.
 - [X] Load more pokemon on click load more button.
-- [ ] Store al the data in local storage 
+- [ ] Store al the data in local storage
 
 #### Self learning
 Learn way more about promises, because they are really handy and understandable :+1: :fire:
