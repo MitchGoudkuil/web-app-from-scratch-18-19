@@ -6,32 +6,30 @@ let startNumber = 0;
 
 export function getAllData(addNumber = 0) {
   let number = startNumber += addNumber;
-
-
-    return fetch('https://pokeapi.co/api/v2/pokemon?offset=' + number)
-    .then(res => {
-      return res.json()
+  return fetch('https://pokeapi.co/api/v2/pokemon?offset=' + number)
+  .then(res => {
+    return res.json()
+  })
+  .then(json => {
+    return json.results.map(results => {
+      return results.url
     })
-    .then(json => {
-      return json.results.map(results => {
-        return results.url
-      })
-    })
-    .then(fetchAllUrlsData => {
-      return Promise.all(fetchAllUrlsData.map(url => {
-        let promise = new Promise((resolve, reject) => {
-          fetch(url).then(pokemon => {
-            resolve(pokemon.json())
-          })
+  })
+  .then(fetchAllUrlsData => {
+    return Promise.all(fetchAllUrlsData.map(url => {
+      let promise = new Promise((resolve, reject) => {
+        fetch(url).then(pokemon => {
+          resolve(pokemon.json())
         })
-        return promise
-      }))
-    })
-    .then(res => {
-      return res.map(pokemon => {
-        return cleanIt(pokemon)
       })
+      return promise
+    }))
+  })
+  .then(res => {
+    return res.map(pokemon => {
+      return cleanIt(pokemon)
     })
+  })
 }
 
 export function getSingleData(name) {
@@ -40,7 +38,7 @@ export function getSingleData(name) {
     return res.json()
   })
   .then(json => {
-      return cleanIt(json);
+    return cleanIt(json);
   })
   .then(res => {
     renderSingleData(res);
@@ -53,10 +51,9 @@ export function getTeamMemberData(name) {
     return res.json()
   })
   .then(json => {
-      return cleanIt(json);
+    return cleanIt(json);
   })
   .then(res => {
-
     teamLocalStorage(res);
   })
 }

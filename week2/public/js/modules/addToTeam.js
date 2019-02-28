@@ -4,7 +4,6 @@ let teamArray = []
 
 function addToTeam(pokemon){
   teamArray.push(pokemon)
-
   renderTeamData(teamArray)
 }
 

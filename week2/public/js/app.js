@@ -1,79 +1,79 @@
-"use strict";
+import { getAllData, getSingleData } from './modules/getData.js';
+import { switchImage, switchBack } from './modules/switchImage.js';
+import { renderAllData, renderSingleData, renderTeamData } from './modules/renderData.js'
+import { addToTeam } from './modules/addToTeam.js';
+import './route.js';
 
+// All button variables
+let loadMoreButton = document.querySelector('.loadmore');
+let shinyButton = document.querySelector('.shiny-button');
+let teamButton = document.querySelector('.team-button');
 
-let list = document.querySelector('#poke-list')
-let main = document.querySelector('main');
-let loadMoreButton = document.querySelector('.loadmore')
-let searchAmount = 0;
+/*lights*/
+let redLight = document.querySelector('.red');
+let orangeLight = document.querySelector('.orange');
+let loadingBalls = document.querySelector('.loading-container');
+let greenLight = document.querySelector('.green');
+let finishSound = new Audio('../../img/tadada.mp3');
+let clickSound = new Audio('../../img/pling.mp3');
 
-function getPokemon() {
-  fetch('https://pokeapi.co/api/v2/pokemon?offset=' + searchAmount)
-  .then(res => {
-    return res.json()
-  })
-  .then(json => {
-    return json.results.map(results => {
-      return results.url
-    })
-  })
-  .then(allUrls => {
-    return Promise.all(allUrls.map(url => {
-      let promise = new Promise((resolve, reject) => {
-        fetch(url).then(pokemon => {
-          resolve(pokemon.json())
-        })
-      })
-      return promise
-    }))
-  })
-  .then(allPokemons => {
-    let pokemonArray = allPokemons.map(pokemon =>{
-      return  {
-        pokeName: pokemon.name,
-        pokeImg: pokemon.sprites.front_default,
-        pokeShiny: pokemon.sprites.front_shiny,
-        pokemonId: pokemon.id,
-        pokeTypes: pokemon.types.map(type => {
-          console.log(type.name);
-          return `<small class="type-tag ${type.type.name}">${type.type.name}</small>`
-        }).join(' ')
-      }
-    })
-    return pokemonArray
-  })
-  .then(response => {
-      response.forEach(pokemon => {
-        console.log(pokemon.pokeTypes)
-        let pokeMarkUp = `
+routie({
+  '': function(){
+    renderAll()
+  },
+  ':name': function(name) {
+    getSingleData(name);
+  }
+})
 
-          <li>
-            <a href="#">
-              <img class="pokemon" src="${pokemon.pokeImg}" alt="">
-              <p>#${pokemon.pokemonId} ${pokemon.pokeName} </p>
-            </a>
-              ${pokemon.pokeTypes}
-          </li>
+async function renderAll(number) {
 
-        `
-        list.insertAdjacentHTML('beforeend',  pokeMarkUp)
-      })
-  })
-  .catch(err => {
-    console.error(err)
-  })
+  loadingIn()
+  let data = await getAllData(number)
+
+  if (data) {
+    loadingDone()
+    renderAllData(data)
+  }
 }
 
-getPokemon();
-
-
-function loadMorePokemon() {
-  searchAmount += 20;
-  getPokemon();
-
+function loadingIn() {
+  redLight.classList.add("loading-red")
+  orangeLight.classList.add("loading-orange")
+  greenLight.classList.add("loading-green")
+  loadingBalls.classList.remove("noshow");
 }
 
-function changeToShiny() {
+function loadingDone() {
+  let blueEye = document.querySelector('.blue-eye')
+  blueEye.classList.add("ping")
+  finishSound.play()
 
+  setTimeout(function(){ blueEye.classList.remove("ping") }, 800);
+
+  redLight.classList.remove("loading-red")
+  orangeLight.classList.remove("loading-orange")
+  greenLight.classList.remove("loading-green")
+  loadingBalls.classList.add("noshow");
 }
 
-loadMoreButton.addEventListener("click", loadMorePokemon);
+function openTeam() {
+  clickSound.play()
+  let teamContainer = document.querySelector('.team-container');
+  teamContainer.classList.toggle('show')
+}
+
+// toggle for team container
+teamButton.addEventListener("click", openTeam)
+
+// Loads 20 more pokemon to the viewport
+loadMoreButton.addEventListener('click', function(){
+  renderAll(20)
+  clickSound.play()
+})
+
+// switch function that changes images to shine one's
+shinyButton.addEventListener('click', function(){
+switchImage()
+clickSound.play()
+})

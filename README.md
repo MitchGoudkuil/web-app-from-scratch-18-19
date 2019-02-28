@@ -23,11 +23,6 @@ The concept that I want to make is not just a place where you can find certain P
 
 ---
 
-#### Sketches and fast design
-I made a small and fast design of how the application was going to look so I could start fetching the data. I wanted it to look like a pokedex which was a small computer the main character has to identify pokemon. I eventually did not really look at the design I made because I was playing around with styling. I am still going to sketch down more of the features that I want to put into the application, which i'm going to put here.
-
----
-
 
 #### Fetching the awesome data
 Started of by building the list item where all the pokemon were going to get stored en making the variables to use.
@@ -70,12 +65,13 @@ Its new for me to work this way with promises, but it is way more handy because 
 #### Features list
 
 - [ ] Search and filter options to find certain pokemon.
-- [ ] Possibility to add pokemon to your team and look at the data combined together.
+- [X] Possibility to add pokemon to your team and look at the data combined together.
 - [X] Possibility to change all the pokem on their sprites to the shiny type of pokemon.
 - [X] Add routing for every pokemon to go to their specific detail page.
 - [X] Send all the specific pokemon data to the detail page and be able to use it there.
 - [X] fetch the data of every specific pokemon.
 - [X] Load more pokemon on click load more button.
+- [ ] Store al the data in local storage 
 
 #### Self learning
-Learn way more about promises, because they are freaking handy and understandable :+1: :fire:
+Learn way more about promises, because they are really handy and understandable :+1: :fire:
