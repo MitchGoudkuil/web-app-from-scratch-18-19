@@ -1,7 +1,7 @@
 # Pokesearch readme
 By Mitch Goudkuil
 
-![Image from the interface](http://mitchgoudkuil.nl/img/app.png)
+![Image from the interface](http://mitchgoudkuil.nl/img/appimage.png)
 
 A website with pokemon data that looks the same as the pokedex the main character has in Pokemon. You can look for your favorite pokemon, add them to your team and review the stats.  Every pokemon gets it's own detail page where specific data is shown and where the user can take a closer look into the stats.
 
@@ -25,7 +25,7 @@ The assignment that we had to do is exactly as the title says, build a webapp fr
 ### Actor diagram
 ![Image from the interface](http://mitchgoudkuil.nl/img/image1.png)
 
-###  diagram
+### Interaction diagram
 ![Image from the interface](http://mitchgoudkuil.nl/img/interaction-diagram.png)
 
 #### Fetching awesome data
