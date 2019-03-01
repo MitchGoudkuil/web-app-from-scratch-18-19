@@ -20,6 +20,7 @@ A website with pokemon data that looks the same as the pokedex the main characte
 [PokeSearch](https://mitchgoudkuil.github.io/web-app-from-scratch-18-19/week2)
 
 ### Install
+Clone the repo and start searching
 ```javascript   
 https://github.com/MitchGoudkuil/web-app-from-scratch-18-19.git
 ```
