@@ -8,14 +8,21 @@ A website with pokemon data that looks the same as the pokedex the main characte
 ### Table of contents
 
 * [Live Demo](#The-assignment)
+* [Install](#install)
 * [The assignment](#The-assignment)
-   * [The concept](#The-concept)
+* [Actor diagram](#Actor-diagram)
+* [Interaction diagram](#Interaction-diagram)
 * [Fetching the data](#Fetching-awesome-data)
 * [Features list](#Features-list)
    * [Self Learning](#Self-Learning)
 
 ### Live Demo
 [PokeSearch](https://mitchgoudkuil.github.io/web-app-from-scratch-18-19/week2)
+
+### Install
+```javascript   
+https://github.com/MitchGoudkuil/web-app-from-scratch-18-19.git
+```
 
 ### The assignment
 The assignment that we had to do is exactly as the title says, build a webapp from scratch. I used the PokeApi because Pokemon was a big part of my childhood and I thought it would be really fun to make something with the data. After doing some reading I found out that the Api contains a lot of fun data to play with and to make features out of.
@@ -26,7 +33,7 @@ The assignment that we had to do is exactly as the title says, build a webapp fr
 ![Image from the interface](http://mitchgoudkuil.nl/img/image1.png)
 
 ### Interaction diagram
-![Image from the interface](http://mitchgoudkuil.nl/img/interaction-diagram.png)
+![Image from the interface](http://mitchgoudkuil.nl/img/interaction-diagramm.png)
 
 #### Fetching awesome data
 Started of by building the list item where all the pokemon were going to get stored en making the variables to use.
@@ -70,7 +77,7 @@ Its new for me to work this way with promises, but it is way more handy because 
 
 - [ ] Search and filter options to find certain pokemon.
 - [X] Possibility to add pokemon to your team and look at the data combined together.
-- [X] Possibility to change all the pokem on their sprites to the shiny type of pokemon.
+- [X] Possibility to change all the pokemon their sprites to the shiny type of pokemon.
 - [X] Add routing for every pokemon to go to their specific detail page.
 - [X] Send all the specific pokemon data to the detail page and be able to use it there.
 - [X] fetch the data of every specific pokemon.
@@ -78,4 +85,4 @@ Its new for me to work this way with promises, but it is way more handy because 
 - [ ] Store al the data in local storage
 
 #### Self learning
-Learn way more about promises, because they are really handy and understandable :+1: :fire:
+Learn more about promises, because they are really handy and understandable :+1: :fire:
